@@ -1,0 +1,16 @@
+# Copy this file to plurality.toml and fill in your token:
+#   cp plurality.toml.example plurality.toml
+#
+# Or use a .env file instead (see .env.example) — env vars take priority.
+
+[bot]
+token = "YOUR_BOT_TOKEN_HERE"
+prefixes = ["pl!", "plurality!"]
+log_level = "INFO"
+
+[database]
+# SQLite — works out of the box, no extra install (recommended to start):
+url = "sqlite+aiosqlite:///plurality.db"
+
+# PostgreSQL — for production (run: python3 scripts/setup_postgres.py):
+# url = "postgresql://postgres:postgres@localhost:5432/plurality"

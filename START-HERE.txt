@@ -1,0 +1,23 @@
+PLURALITY — DRAG THIS FOLDER TO GITHUB
+======================================
+
+This folder is ready to upload. It contains ONLY the Python bot.
+No secrets, no database files, no old C# code.
+
+UPLOAD TO GITHUB:
+  1. Go to github.com → New repository → name it "Plurality"
+  2. Drag this entire folder into the upload area
+     OR use GitHub Desktop: Add → choose this folder
+
+AFTER UPLOADING (on your computer):
+  1. Clone the repo (or open the folder)
+  2. Run:  ./setup.sh
+  3. Open .env and paste your Discord bot token
+  4. Run:  python3 -m plurality
+
+NEVER UPLOAD:
+  - .env (has your token)
+  - plurality.toml (has your token)
+  - *.db files
+
+Those are created locally by setup.sh and stay on your machine only.
