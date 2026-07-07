@@ -1,18 +1,116 @@
-# General Info
+# Plurality
 
-Proxymaster is a Discord Bot, created with specifically DID/OSDD-1 systems in mind, though no one will be harmed or demonized for using the bot in a fashion other than its intended use, or if they are not the demographic it was designed for.
+**The best DID/OSDD proxy bot for Discord.**
 
-It is created by `Mushroom Kingdom#8404` on Discord, and if you have any questions about the bot, you can feel free to DM me or join the support server at this link: [https://discord.gg/NMcsKRvpns](https://discord.gg/NMcsKRvpns).
+Plurality is a modern Python rewrite built for plural systems — with everything PluralKit does, plus a better experience out of the box.
 
-More info about the bot, including commands and setup instructions, can be found here: [https://proxymaster.carrd.co/](https://proxymaster.carrd.co/).
+## Why Plurality?
 
-# Fork and License
+| Feature | PluralKit | Plurality |
+|---------|-----------|-----------|
+| Slash commands | ❌ | ✅ Full slash + autocomplete |
+| Setup wizard | ❌ | ✅ Interactive `/setup` |
+| Database | PostgreSQL required | SQLite by default (zero config) |
+| Prefix commands | ✅ | ✅ `pl!` + `plurality!` |
+| Proxy tags | ✅ | ✅ 100% compatible |
+| Autoproxy modes | ✅ | ✅ front, latch, member |
+| Switch tracking | ✅ | ✅ |
+| Groups | ✅ | ✅ |
+| Import/Export | ✅ | ✅ PluralKit-compatible |
+| Mental health tools | Some forks | ✅ Built-in |
+| Message edit sync | ✅ | ✅ |
+| Privacy controls | ✅ | ✅ |
 
-This bot is a fork of the Discord Bot **PluralKit** created by xSke (directory can be found here: [https://github.com/xSke/PluralKit](https://github.com/xSke/PluralKit)). I do not claim any of the code created by xSke or other contributors as my own, and I only take ownership of the modifications I did. Similarly, due to this bot being a fork, it is under the same license as PluralKit, which is the GNU Affero General Public License, Version 3, which can be found here: [https://www.gnu.org/licenses/agpl-3.0.en.html](https://www.gnu.org/licenses/agpl-3.0.en.html)
+## Quick Start
 
-# How to fork
+### 1. Create a Discord bot
 
-You'll need a PostgreSQL Database and .NET set up before you can fork it. Once you have that set up, you will need to download [https://git-scm.com/downloads](Git) and open GitBash. 
+1. Go to the [Discord Developer Portal](https://discord.com/developers/applications)
+2. Create an application → Bot → copy the token
+3. Enable **Message Content Intent** and **Server Members Intent**
+4. Invite with permissions: Send Messages, Manage Messages, Manage Webhooks, Read Message History
 
-After that you will need to do `git clone https://github.com/bassys/Proxymaster`. Once you cloned the bot you will need to make a .conf file called `pluralkit.conf` based off of the `pluralkit.conf.example` in the main folder.
--> Once cloned you can simply use `dotnet run --project pluralkit.bot` in Bash to run the bot!
+### 2. Install & run
+
+```bash
+git clone https://github.com/yourusername/Plurality.git
+cd Plurality
+pip install -r requirements.txt
+cp plurality.toml.example plurality.toml
+# Edit plurality.toml with your bot token
+python -m plurality
+```
+
+Or with environment variables:
+
+```bash
+export DISCORD_TOKEN="your_token_here"
+python -m plurality
+```
+
+### 3. Set up your system
+
+In Discord:
+
+```
+/setup          ← interactive wizard (recommended!)
+pl!system new   ← or use commands
+pl!member new Luna
+pl!member proxy Luna add [text]
+pl!switch Luna
+pl!autoproxy front
+```
+
+Then type `[hello!]` in chat and watch it proxy. ✨
+
+## Commands
+
+**Prefix:** `pl!` or `plurality!`
+
+| Category | Examples |
+|----------|---------|
+| System | `pl!system new`, `pl!system list`, `/system members` |
+| Members | `pl!member new <name>`, `pl!member proxy <name> add [text]` |
+| Switching | `pl!switch <member>`, `pl!switch out`, `/switch history` |
+| Autoproxy | `pl!autoproxy front`, `pl!autoproxy latch`, `pl!autoproxy off` |
+| Groups | `pl!group new <name>`, `pl!group add <group> <member>` |
+| Server | `pl!blacklist add #channel`, `/permcheck` |
+| Data | `pl!export`, `pl!import` (attach JSON file) |
+| Support | `pl!grounding`, `pl!breathing`, `pl!hotlines` |
+
+Use `pl!help <topic>` or `/help` for detailed help.
+
+## Proxy Tags
+
+Set tags for a member, then type them around your message:
+
+```
+pl!member proxy Luna add [text]
+[Hello everyone!]    → proxies as Luna
+```
+
+Supported formats: `[text]`, `{text}`, `prefix|suffix`, `:: text ::`
+
+Prefix `\` to skip autoproxy: `\this won't autoproxy`
+
+## Docker
+
+```bash
+export DISCORD_TOKEN="your_token"
+docker compose -f docker-compose.python.yml up -d
+```
+
+## Development
+
+```bash
+pip install -r requirements.txt pytest
+pytest tests/
+```
+
+## License
+
+Plurality is a fork inspired by [PluralKit](https://github.com/pluralkit/pluralkit) by xSke, licensed under the **GNU Affero General Public License v3.0**.
+
+## For the community
+
+Built with love for DID/OSDD systems. You deserve tools that actually work for you. 💜
