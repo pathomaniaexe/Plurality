@@ -2,6 +2,8 @@
 
 **The best DID/OSDD proxy bot for Discord.**
 
+**Please keep in mind that this will be updated while i have time, i work full time and this is side stuff for me right now** <3
+
 Plurality is a modern Python rewrite built for plural systems — with everything PluralKit does, plus a better experience out of the box.
 
 ## Why Plurality?
