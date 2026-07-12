@@ -1,5 +1,7 @@
 # Plurality
 
+**Story behind this bot is we got tired of pluralkit going down and other bots suck, so we found this one and making it better
+
 **The best DID/OSDD proxy bot for Discord.**
 
 **Please keep in mind that this will be updated while i have time, i work full time and this is side stuff for me right now** <3
