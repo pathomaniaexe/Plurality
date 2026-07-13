@@ -9,8 +9,5 @@ prefixes = ["pl!", "plurality!"]
 log_level = "INFO"
 
 [database]
-# SQLite — works out of the box, no extra install (recommended to start):
+# SQLite file path (created automatically on first run)
 url = "sqlite+aiosqlite:///plurality.db"
-
-# PostgreSQL — for production (run: python3 scripts/setup_postgres.py):
-# url = "postgresql://postgres:postgres@localhost:5432/plurality"
