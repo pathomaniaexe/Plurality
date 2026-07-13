@@ -36,6 +36,5 @@ echo "Done! Next steps:"
 echo "  1. Add your Discord bot token to .env or plurality.toml"
 echo "  2. Run: python3 -m plurality"
 echo
-echo "Optional PostgreSQL setup:"
-echo "  python3 scripts/setup_postgres.py"
+echo "Uses SQLite by default (plurality.db) — no database install needed."
 echo
