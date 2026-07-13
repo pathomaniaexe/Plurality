@@ -1,0 +1,13 @@
+# Copy this file to plurality.toml and fill in your token:
+#   cp plurality.toml.example plurality.toml
+#
+# Or use a .env file instead (see .env.example) — env vars take priority.
+
+[bot]
+token = "YOUR_BOT_TOKEN_HERE"
+prefixes = ["pl!", "plurality!"]
+log_level = "INFO"
+
+[database]
+# SQLite file path (created automatically on first run)
+url = "sqlite+aiosqlite:///plurality.db"
